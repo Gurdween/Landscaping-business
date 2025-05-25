@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenScape Lagos - Premium Landscaping Services</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+primary:'#2e7d32',
+secondary:'#795548'
+},
+borderRadius:{
+'none':'0px',
+'sm':'4px',
+DEFAULT:'8px',
+'md':'12px',
+'lg':'16px',
+'xl':'20px',
+'2xl':'24px',
+'3xl':'32px',
+'full':'9999px',
+'button':'8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=beautiful%20modern%20landscaped%20garden%20with%20lush%20green%20plants%2C%20tropical%20flowers%2C%20manicured%20lawn%2C%20stone%20pathways%2C%20and%20water%20features%20in%20Lagos%20Nigeria%2C%20professional%20landscape%20photography%20with%20natural%20lighting&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+input, textarea {
+outline: none;
+}
+input:focus, textarea:focus {
+border-color: #2e7d32;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.gallery-item {
+overflow: hidden;
+}
+.gallery-item img {
+transition: transform 0.5s;
+}
+.gallery-item:hover img {
+transform: scale(1.05);
+}
+.gallery-overlay {
+opacity: 0;
+transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-overlay {
+opacity: 1;
+}
+.back-to-top {
+display: none;
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 99;
+}
+.whatsapp-btn {
+position: fixed;
+bottom: 20px;
+left: 20px;
+z-index: 99;
+}
+@media (max-width: 768px) {
+.mobile-menu {
+display: none;
+}
+.mobile-menu.active {
+display: flex;
+}
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header & Navigation -->
+<header class="fixed w-full bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="font-['Pacifico'] text-primary text-2xl">logo</a>
+<nav class="hidden md:flex space-x-6">
+<a href="#home" class="text-gray-700 hover:text-primary font-medium transition">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary font-medium transition">About</a>
+<a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Services</a>
+<a href="#projects" class="text-gray-700 hover:text-primary font-medium transition">Projects</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Contact</a>
+</nav>
+<a href="#contact" class="hidden md:block bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get Quote</a>
+<button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<div id="mobile-menu" class="mobile-menu md:hidden absolute top-full left-0 right-0 flex-col w-full bg-white border-t border-gray-100 px-4 py-2 shadow-lg hidden transition-all duration-300 ease-in-out">
+<a href="#home" class="py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+<a href="#about" class="py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About</a>
+<a href="#services" class="py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Services</a>
+<a href="#projects" class="py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Projects</a>
+<a href="#contact" class="py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Contact</a>
+<a href="#contact" class="my-3 bg-primary text-white py-3 px-4 rounded-button font-medium text-center whitespace-nowrap block">Get Quote</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero-section min-h-screen flex items-center pt-16">
+<div class="container mx-auto px-4 sm:px-6 py-12 sm:py-20 text-white">
+<div class="max-w-2xl mx-auto sm:mx-0">
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight text-center sm:text-left">Transform Your Outdoor Space</h1>
+<p class="text-lg sm:text-xl mb-6 sm:mb-8 text-center sm:text-left">Lagos' premier landscaping service creating beautiful, sustainable gardens since 2010</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+<a href="#contact" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get Free Quote</a>
+<a href="#services" class="bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Our Services</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">About GreenScape Lagos</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Creating beautiful outdoor spaces for homes and businesses across Lagos</p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=professional%20landscaping%20team%20in%20Lagos%20Nigeria%20working%20on%20a%20garden%2C%20diverse%20team%20members%20in%20green%20uniforms%2C%20smiling%2C%20with%20professional%20equipment%2C%20natural%20lighting%2C%20high-quality%20professional%20photograph&width=600&height=500&seq=2&orientation=landscape" alt="Our Team" class="rounded-lg shadow-lg object-cover w-full h-full object-top">
+</div>
+<div class="md:w-1/2">
+<h3 class="text-2xl font-semibold text-gray-800 mb-4">Our Story</h3>
+<p class="text-gray-600 mb-4">Founded in 2010 by Adebayo Johnson, GreenScape Lagos began with a simple mission: to bring the beauty of nature to urban spaces in Lagos. With over 15 years of experience in horticulture and landscape design, Adebayo assembled a team of passionate professionals dedicated to creating stunning outdoor environments.</p>
+<p class="text-gray-600 mb-6">Today, we're proud to be Lagos' most trusted landscaping company, having completed over 500 projects for residential homes, corporate offices, hotels, and government facilities across Nigeria.</p>
+<div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+<i class="ri-award-line ri-lg text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Our Mission</h4>
+<p class="text-gray-600">To create sustainable, beautiful landscapes that enhance quality of life and property value</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary">15+</div>
+<p class="text-gray-600">Years Experience</p>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary">500+</div>
+<p class="text-gray-600">Projects Completed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-12 sm:py-20 bg-gray-50">
+<div class="container mx-auto px-4 sm:px-6">
+<div class="text-center mb-8 sm:mb-12">
+<h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Our Services</h2>
+<div class="w-16 sm:w-20 h-1 bg-primary mx-auto mt-3 sm:mt-4 mb-4 sm:mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base px-2 sm:px-4">Comprehensive landscaping solutions tailored to Lagos' unique climate and your specific needs</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20garden%20design%20blueprint%20and%203D%20rendering%2C%20landscape%20architecture%20plans%20for%20tropical%20garden%20in%20Lagos%2C%20detailed%20design%20with%20plants%20and%20features%2C%20high%20quality%20visualization&width=600&height=400&seq=3&orientation=landscape" alt="Garden Design" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-plant-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Garden Design</h3>
+<p class="text-gray-600">Custom landscape designs that blend aesthetics with functionality, creating outdoor spaces that reflect your style and meet your needs.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20lawn%20maintenance%20in%20Lagos%20Nigeria%2C%20worker%20using%20modern%20lawn%20mower%20on%20lush%20green%20grass%2C%20perfect%20lawn%20care%2C%20sunny%20day%2C%20professional%20landscaping%20service&width=600&height=400&seq=4&orientation=landscape" alt="Lawn Maintenance" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-scissors-cut-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Lawn Maintenance</h3>
+<p class="text-gray-600">Regular mowing, fertilization, weed control, and pest management to keep your lawn lush, green, and healthy year-round.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20irrigation%20system%20installation%20in%20tropical%20garden%2C%20drip%20irrigation%20and%20sprinklers%20in%20Lagos%20Nigeria%2C%20water%20conservation%20technology%2C%20professional%20installation&width=600&height=400&seq=5&orientation=landscape" alt="Irrigation Systems" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-drop-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Irrigation Systems</h3>
+<p class="text-gray-600">Water-efficient irrigation solutions designed for Lagos' climate, ensuring your landscape stays vibrant while conserving water.</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=luxury%20hardscaping%20in%20Lagos%20Nigeria%2C%20stone%20pathways%2C%20retaining%20walls%2C%20outdoor%20patio%20with%20natural%20stone%2C%20professional%20hardscape%20installation%2C%20high-end%20residential%20property&width=600&height=400&seq=6&orientation=landscape" alt="Hardscaping" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-brick-wall-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Hardscaping</h3>
+<p class="text-gray-600">Custom patios, walkways, retaining walls, and outdoor living spaces that add structure, function, and value to your property.</p>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20plant%20installation%20in%20Lagos%20Nigeria%2C%20landscapers%20planting%20tropical%20flowers%20and%20palm%20trees%2C%20colorful%20garden%20installation%2C%20professional%20gardeners%20at%20work&width=600&height=400&seq=7&orientation=landscape" alt="Plant Installation" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-seedling-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Plant Installation</h3>
+<p class="text-gray-600">Expert selection and installation of trees, shrubs, flowers, and ground covers suited to Lagos' tropical climate and your design preferences.</p>
+</div>
+</div>
+<!-- Service 6 -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=beautiful%20landscape%20lighting%20in%20Lagos%20Nigeria%20garden%20at%20dusk%2C%20professional%20outdoor%20lighting%20installation%2C%20pathway%20lights%2C%20accent%20lighting%20on%20plants%2C%20modern%20garden%20illumination&width=600&height=400&seq=8&orientation=landscape" alt="Landscape Lighting" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+<i class="ri-lightbulb-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Landscape Lighting</h3>
+<p class="text-gray-600">Artistic lighting design that enhances safety, security, and the beauty of your landscape after dark.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Gallery -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Our Projects</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Browse our portfolio of completed landscaping projects across Lagos</p>
+</div>
+<div class="flex justify-center mb-6 sm:mb-8 overflow-x-auto pb-2">
+<div class="inline-flex bg-gray-100 rounded-full p-1">
+<button class="gallery-filter-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary text-white whitespace-nowrap text-sm sm:text-base" data-filter="all">All Projects</button>
+<button class="gallery-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-gray-700 whitespace-nowrap text-sm sm:text-base" data-filter="residential">Residential</button>
+<button class="gallery-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-gray-700 whitespace-nowrap text-sm sm:text-base" data-filter="commercial">Commercial</button>
+<button class="gallery-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-gray-700 whitespace-nowrap text-sm sm:text-base" data-filter="public">Public Spaces</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Project 1 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="residential">
+<img src="https://readdy.ai/api/search-image?query=before%20and%20after%20transformation%20of%20residential%20garden%20in%20Lagos%20Nigeria%2C%20split%20image%20showing%20barren%20yard%20transformed%20into%20lush%20tropical%20garden%20with%20colorful%20flowers%20and%20stone%20pathway%2C%20dramatic%20improvement&width=600&height=400&seq=9&orientation=landscape" alt="Residential Garden Transformation" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Victoria Island Residence</h3>
+<p class="text-center mb-4">Complete garden redesign with tropical plants, stone pathways, and custom irrigation</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Residential</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="commercial">
+<img src="https://readdy.ai/api/search-image?query=luxury%20hotel%20landscaping%20in%20Lagos%20Nigeria%2C%20professional%20landscaped%20entrance%20to%20upscale%20hotel%20with%20palm%20trees%2C%20tropical%20flowers%2C%20water%20feature%2C%20and%20elegant%20hardscaping%2C%20night%20lighting&width=600&height=400&seq=10&orientation=landscape" alt="Commercial Landscaping" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Eko Hotel Entrance</h3>
+<p class="text-center mb-4">Luxury entrance landscaping with water features, lighting, and seasonal color</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Commercial</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="public">
+<img src="https://readdy.ai/api/search-image?query=public%20park%20landscaping%20in%20Lagos%20Nigeria%2C%20community%20garden%20with%20walking%20paths%2C%20benches%2C%20shade%20trees%2C%20playground%20area%2C%20and%20colorful%20tropical%20plants%2C%20well-maintained%20public%20space&width=600&height=400&seq=11&orientation=landscape" alt="Public Park" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Lekki Conservation Park</h3>
+<p class="text-center mb-4">Sustainable landscaping for public recreation area with native plants</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Public Spaces</span>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="residential">
+<img src="https://readdy.ai/api/search-image?query=luxury%20backyard%20swimming%20pool%20landscaping%20in%20Lagos%20Nigeria%2C%20elegant%20pool%20surrounded%20by%20tropical%20plants%2C%20outdoor%20lounge%20area%2C%20stone%20decking%2C%20professional%20landscape%20design%20for%20high-end%20residence&width=600&height=400&seq=12&orientation=landscape" alt="Pool Landscaping" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Ikoyi Pool Garden</h3>
+<p class="text-center mb-4">Poolside paradise with custom hardscaping, tropical plants, and lighting</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Residential</span>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="commercial">
+<img src="https://readdy.ai/api/search-image?query=corporate%20office%20landscaping%20in%20Lagos%20Nigeria%2C%20professional%20landscaped%20entrance%20to%20modern%20office%20building%20with%20clean%20lines%2C%20architectural%20plants%2C%20corporate%20branding%20elements%2C%20and%20well-maintained%20greenery&width=600&height=400&seq=13&orientation=landscape" alt="Corporate Office" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">GTBank Headquarters</h3>
+<p class="text-center mb-4">Corporate landscape design with modern aesthetics and low maintenance</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Commercial</span>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md relative group" data-category="public">
+<img src="https://readdy.ai/api/search-image?query=rooftop%20garden%20in%20Lagos%20Nigeria%2C%20urban%20green%20space%20on%20high-rise%20building%20with%20container%20plants%2C%20seating%20areas%2C%20shade%20structures%2C%20city%20views%2C%20professional%20landscape%20design%20for%20public%20enjoyment&width=600&height=400&seq=14&orientation=landscape" alt="Rooftop Garden" class="w-full h-64 object-cover object-top">
+<div class="gallery-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Marina Rooftop Garden</h3>
+<p class="text-center mb-4">Urban oasis featuring container gardens, shade structures, and wind-resistant plants</p>
+<span class="px-3 py-1 bg-white text-primary rounded-full text-sm">Public Spaces</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Why Choose GreenScape Lagos</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">We combine expertise, quality materials, and exceptional service to deliver outstanding results</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+<i class="ri-user-star-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Team</h3>
+<p class="text-gray-600">Certified horticulturists and landscape designers with local expertise</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+<i class="ri-recycle-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Eco-Friendly</h3>
+<p class="text-gray-600">Sustainable practices and materials for environmentally responsible landscaping</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+<i class="ri-tools-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Quality Materials</h3>
+<p class="text-gray-600">Premium plants, hardscaping materials, and equipment for lasting results</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+<i class="ri-customer-service-2-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Dedicated Support</h3>
+<p class="text-gray-600">Ongoing maintenance and responsive customer service after project completion</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md p-8 mb-16">
+<h3 class="text-2xl font-semibold text-gray-800 text-center mb-8">What Our Clients Say</h3>
+<div class="testimonial-slider">
+<div class="testimonial-slide">
+<div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+<p class="text-gray-600 italic mb-4">"GreenScape transformed our barren backyard into a tropical paradise. Their attention to detail and knowledge of plants suited for Lagos' climate is impressive. We couldn't be happier with the results!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+<i class="ri-user-line text-gray-500"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Oluwaseun Adeyemi</h4>
+<p class="text-gray-500 text-sm">Lekki Phase 1 Resident</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+<i class="ri-award-line ri-2x text-primary mr-3"></i>
+<span class="text-gray-700 font-medium">Lagos Landscape Association</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+<i class="ri-verified-badge-line ri-2x text-primary mr-3"></i>
+<span class="text-gray-700 font-medium">Certified Green Business</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+<i class="ri-shield-star-line ri-2x text-primary mr-3"></i>
+<span class="text-gray-700 font-medium">5-Year Warranty</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Contact Us</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Ready to transform your outdoor space? Get in touch for a free consultation</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<div class="lg:w-1/2 bg-white rounded-lg shadow-md p-8">
+<h3 class="text-2xl font-semibold text-gray-800 mb-6">Request a Quote</h3>
+<form id="contact-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+<div>
+<label for="name" class="block text-gray-700 mb-2 text-sm sm:text-base">Full Name</label>
+<input type="text" id="name" class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded text-sm sm:text-base border border-gray-300 focus:border-primary" placeholder="Your name">
+</div>
+<div>
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Your email">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Your phone">
+</div>
+<div>
+<label for="service" class="block text-gray-700 mb-2">Service Interest</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary appearance-none pr-8">
+<option value="">Select a service</option>
+<option value="Garden Design">Garden Design</option>
+<option value="Lawn Maintenance">Lawn Maintenance</option>
+<option value="Irrigation Systems">Irrigation Systems</option>
+<option value="Hardscaping">Hardscaping</option>
+<option value="Plant Installation">Plant Installation</option>
+<option value="Landscape Lighting">Landscape Lighting</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Your Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary" placeholder="Tell us about your project"></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition w-full md:w-auto whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md p-8 mb-6">
+<h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Office Address</h4>
+<p class="text-gray-600">15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Phone Numbers</h4>
+<p class="text-gray-600">+234 801 234 5678</p>
+<p class="text-gray-600">+234 905 678 1234</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Email Address</h4>
+<p class="text-gray-600">info@greenscapelagos.com</p>
+<p class="text-gray-600">support@greenscapelagos.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Business Hours</h4>
+<p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+<p class="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
+<p class="text-gray-600">Sunday: Closed</p>
+</div>
+</div>
+</div>
+<div class="mt-6 flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden h-64">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
+<div>
+<a href="#" class="font-['Pacifico'] text-white text-2xl sm:text-3xl mb-3 sm:mb-4 inline-block">logo</a>
+<p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">Creating beautiful, sustainable landscapes across Lagos since 2010. We transform outdoor spaces into stunning environments that enhance your property and lifestyle.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
+<li><a href="#about" class="text-gray-300 hover:text-white transition">About Us</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Services</a></li>
+<li><a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a></li>
+<li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Services</h3>
+<ul class="space-y-3">
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Garden Design</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Lawn Maintenance</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Irrigation Systems</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Hardscaping</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Plant Installation</a></li>
+<li><a href="#services" class="text-gray-300 hover:text-white transition">Landscape Lighting</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Contact Info</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-map-pin-line text-primary mr-3 mt-1"></i>
+<span>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+</li>
+<li class="flex items-start">
+<i class="ri-phone-line text-primary mr-3 mt-1"></i>
+<span>+234 801 234 5678</span>
+</li>
+<li class="flex items-start">
+<i class="ri-mail-line text-primary mr-3 mt-1"></i>
+<span>info@greenscapelagos.com</span>
+</li>
+<li class="flex items-start">
+<i class="ri-time-line text-primary mr-3 mt-1"></i>
+<span>Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-700 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 GreenScape Lagos. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400">Payment Methods:</span>
+<i class="ri-visa-fill text-gray-300 text-xl"></i>
+<i class="ri-mastercard-fill text-gray-300 text-xl"></i>
+<i class="ri-paypal-fill text-gray-300 text-xl"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/2348012345678" class="whatsapp-btn w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:bg-green-600 transition">
+<i class="ri-whatsapp-line ri-xl text-white"></i>
+</a>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="back-to-top w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg hover:bg-opacity-90 transition">
+<i class="ri-arrow-up-line ri-lg text-white"></i>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+let isMenuOpen = false;
+function toggleMenu(show) {
+    isMenuOpen = show;
+    mobileMenu.classList.toggle('hidden', !show);
+    mobileMenu.classList.toggle('flex', show);
+    mobileMenuBtn.innerHTML = show ? 
+        '<i class="ri-close-line ri-lg"></i>' : 
+        '<i class="ri-menu-line ri-lg"></i>';
+}
+mobileMenuBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleMenu(!isMenuOpen);
+});
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+});
+document.addEventListener('click', function(event) {
+    if (isMenuOpen && !mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+        toggleMenu(false);
+    }
+});
+mobileMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Back to Top Button
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopBtn.style.display = 'flex';
+} else {
+backToTopBtn.style.display = 'none';
+}
+});
+backToTopBtn.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Gallery Filter
+const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+// Remove active class from all buttons
+filterBtns.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('text-gray-700');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('text-gray-700');
+const filter = this.getAttribute('data-filter');
+galleryItems.forEach(item => {
+if (filter === 'all' || item.getAttribute('data-category') === filter) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Form Validation
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+const message = document.getElementById('message').value;
+let isValid = true;
+if (!name) {
+isValid = false;
+document.getElementById('name').classList.add('border-red-500');
+} else {
+document.getElementById('name').classList.remove('border-red-500');
+}
+if (!email || !email.includes('@')) {
+isValid = false;
+document.getElementById('email').classList.add('border-red-500');
+} else {
+document.getElementById('email').classList.remove('border-red-500');
+}
+if (!phone) {
+isValid = false;
+document.getElementById('phone').classList.add('border-red-500');
+} else {
+document.getElementById('phone').classList.remove('border-red-500');
+}
+if (!message) {
+isValid = false;
+document.getElementById('message').classList.add('border-red-500');
+} else {
+document.getElementById('message').classList.remove('border-red-500');
+}
+if (isValid) {
+alert('Thank you for your message! We will get back to you soon.');
+contactForm.reset();
+}
+});
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerHeight = document.querySelector('header').offsetHeight;
+const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
