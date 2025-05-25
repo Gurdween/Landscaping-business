@@ -32,12 +32,11 @@ landscaping-website/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/landscaping-website.git
+   git clone https://github.com/Gurdween/Landscaping-business.git
    ```
 2. Open `index.html` in your browser to view locally.
 3. You can deploy it on GitHub Pages or any static site host.
 
 ## 📬 Contact
 📧 Email: enebeligodwin2@gmail.com
-
-🐙 GitHub: @gurdween
+🐙 GitHub: @Gurdween
