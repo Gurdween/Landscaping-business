@@ -9,20 +9,6 @@ A simple, responsive website for a landscaping business built using **HTML**, **
 * Contact form (static – can be connected to a backend or form service)
 * Clean and modern design
 
-## 📁 Project Structure
-
-```
-landscaping-website/
-│
-├── index.html           # Main HTML file
-├── /css
-│   └── styles.css       # Stylesheet
-├── /js
-│   └── script.js        # JavaScript functionality
-├── /images              # Image assets
-└── README.md            # Project documentation
-```
-
 ## 🧰 Tech Stack
 * HTML5
 * CSS3 (Flexbox, Grid)
@@ -32,7 +18,7 @@ landscaping-website/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Gurdween/Landscaping-business
+   https://github.com/Gurdween/Landscaping-business
    ```
 2. Open `index.html` in your browser to view locally.
 3. You can deploy it on GitHub Pages or any static site host.
